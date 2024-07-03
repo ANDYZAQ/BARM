@@ -9,7 +9,7 @@ Anqi Zhang<sup>1</sup>, Guangyu Gao<sup>1</sup>
 Accepted in ECCV 2024 <br />
 
 [![Paper](https://img.shields.io/badge/arXiv-2106.11562-brightgreen)](https://arxiv.org/abs/2106.11562)
-<img src = "./figures/framework.png" width="100%" height="100%">
+<img src = "figures/framework.png" width="100%" height="100%">
 
 ## Preparation
 
@@ -183,8 +183,8 @@ train.py --data_root ${DATA_ROOT} --model ${MODEL} --crop_val --lr ${LR} \
 
 ### Qualitative Results
 
-<img src = "./figures/barm_effect.png" width="100%" height="100%">
-<img src = "./figures/qual.png" width="100%" height="100%">
+<img src = "figures/barm_effect.png" width="100%" height="100%">
+<img src = "figures/qual.png" width="100%" height="100%">
 
 # Citation
 ```
