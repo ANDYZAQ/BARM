@@ -1,2 +1,2 @@
 from .modeling import *
-from .deeplab import *
+from ._deeplab import *

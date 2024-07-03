@@ -25,20 +25,8 @@ def _segm_resnet(name, backbone_name, num_classes, output_stride, pretrained_bac
     return_layers = {'layer4': 'out'}
     if name=='deeplabv3':
         classifier = DeepLabHead(inplanes , num_classes, aspp_dilate)
-    elif name=='deeplabv3wob':
-        classifier = DeepLabHeadwob(inplanes , num_classes, aspp_dilate)
-    elif name=='deeplabv3mlp':
-        classifier = DeepLabMLP(inplanes , num_classes, aspp_dilate)
-    elif name=='deeplabv3cls':
-        classifier = DeepLabHeadCls(inplanes, num_classes, aspp_dilate)
-    elif name=='deeplabv3clsaspp':
-        classifier = DeepLabHeadEASPP(inplanes, num_classes, aspp_dilate)
-    elif name=="deeplabv3clse":
-        classifier = DeepLabHeadClsE(inplanes, num_classes, aspp_dilate)
-    elif name=="deeplabv3clss":
-        classifier = DeepLabHeadClsS(inplanes, num_classes, aspp_dilate)
-    elif name=="deeplabv3clssb":
-        classifier = DeepLabHeadClsSb(inplanes, num_classes, aspp_dilate)
+    elif name=="deeplabv3_bga":
+        classifier = DeepLabHeadBgA(inplanes, num_classes, aspp_dilate)
     
     backbone = IntermediateLayerGetter(backbone, return_layers=return_layers)
 
@@ -122,32 +110,8 @@ def deeplabv3_mobilenet(num_classes=21, output_stride=8, pretrained_backbone=Tru
     return _load_model('deeplabv3', 'mobilenetv2', num_classes, output_stride=output_stride, 
                        pretrained_backbone=pretrained_backbone, bn_freeze=bn_freeze)
 
-def deeplabv3wob_resnet101(num_classes=21, output_stride=8, pretrained_backbone=True, bn_freeze=False):
-    return _load_model('deeplabv3wob', 'resnet101', num_classes, output_stride=output_stride, 
-                       pretrained_backbone=pretrained_backbone, bn_freeze=bn_freeze)
-
-def deeplabv3mlp_resnet101(num_classes=21, output_stride=8, pretrained_backbone=True, bn_freeze=False):
-    return _load_model('deeplabv3mlp', 'resnet101', num_classes, output_stride=output_stride, 
-                       pretrained_backbone=pretrained_backbone, bn_freeze=bn_freeze)
-
-def deeplabv3cls_resnet101(num_classes=21, output_stride=8, pretrained_backbone=True, bn_freeze=False):
-    return _load_model('deeplabv3cls', 'resnet101', num_classes, output_stride=output_stride, 
-                       pretrained_backbone=pretrained_backbone, bn_freeze=bn_freeze)
-
-def deeplabv3clsaspp_resnet101(num_classes=21, output_stride=8, pretrained_backbone=True, bn_freeze=False):
-    return _load_model('deeplabv3clsaspp', 'resnet101', num_classes, output_stride=output_stride, 
-                       pretrained_backbone=pretrained_backbone, bn_freeze=bn_freeze)
-
-def deeplabv3clse_resnet101(num_classes=21, output_stride=8, pretrained_backbone=True, bn_freeze=False):
-    return _load_model('deeplabv3clse', 'resnet101', num_classes, output_stride=output_stride, 
-                       pretrained_backbone=pretrained_backbone, bn_freeze=bn_freeze)
-
-def deeplabv3clss_resnet101(num_classes=21, output_stride=8, pretrained_backbone=True, bn_freeze=False):
-    return _load_model('deeplabv3clss', 'resnet101', num_classes, output_stride=output_stride, 
-                       pretrained_backbone=pretrained_backbone, bn_freeze=bn_freeze)
-
-def deeplabv3clssb_resnet101(num_classes=21, output_stride=8, pretrained_backbone=True, bn_freeze=False):
-    return _load_model('deeplabv3clssb', 'resnet101', num_classes, output_stride=output_stride, 
+def deeplabv3_resnet101_bga(num_classes=21, output_stride=8, pretrained_backbone=True, bn_freeze=False):
+    return _load_model('deeplabv3_bga', 'resnet101', num_classes, output_stride=output_stride,
                        pretrained_backbone=pretrained_backbone, bn_freeze=bn_freeze)
 
 # Deeplab v3+
@@ -195,12 +159,6 @@ def get_modelmap():
         'deeplabv3_resnet101': deeplabv3_resnet101,
         'deeplabv3plus_resnet101': deeplabv3plus_resnet101,
         'deeplabv3_mobilenet': deeplabv3_mobilenet,
-        'deeplabv3plus_mobilenet': deeplabv3plus_mobilenet, 
-        'deeplabv3wob_resnet101': deeplabv3wob_resnet101,
-        'deeplabv3mlp_resnet101': deeplabv3mlp_resnet101,
-        'deeplabv3cls_resnet101': deeplabv3cls_resnet101,
-        'deeplabv3clsaspp_resnet101': deeplabv3clsaspp_resnet101,
-        'deeplabv3clse_resnet101': deeplabv3clse_resnet101,
-        'deeplabv3clss_resnet101': deeplabv3clss_resnet101,
-        'deeplabv3clssb_resnet101': deeplabv3clssb_resnet101,
+        'deeplabv3plus_mobilenet': deeplabv3plus_mobilenet,
+        'deeplabv3bga_resnet101': deeplabv3_resnet101_bga,
     }

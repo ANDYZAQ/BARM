@@ -196,17 +196,6 @@ class Trainer(object):
         self.total_itrs = self.train_epoch * len(self.train_loader)
         self.val_interval = max(100, self.total_itrs // 100)
         print(f"... train epoch : {self.train_epoch} , iterations : {self.total_itrs} , val_interval : {self.val_interval}")
-    
-    def load_memory_data(self, mem_iter):
-        try:
-            m_images, m_labels, _ = mem_iter.next()
-        except:
-            mem_iter = iter(self.memory_loader)
-            m_images, m_labels, _ = mem_iter.next()
-
-        m_images = m_images.to(self.device, dtype=torch.float32, non_blocking=True)
-        m_labels = m_labels.to(self.device, dtype=torch.long, non_blocking=True)
-        return m_images, m_labels
                 
     def train(self):
         scaler = torch.cuda.amp.GradScaler(enabled=self.amp)

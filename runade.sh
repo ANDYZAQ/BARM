@@ -1,4 +1,4 @@
-MODEL=deeplabv3clse_resnet101
+MODEL=deeplabv3bga_resnet101
 DATA_ROOT=/data/****/ADEChallengeData2016/
 DATASET=ade
 TASK=100-10
@@ -29,8 +29,7 @@ torchrun --nproc_per_node=2 --master_port=34178 \
 train.py --data_root ${DATA_ROOT} --model ${MODEL} --crop_val --lr ${LR} \
     --batch_size ${BATCH} --train_epoch ${EPOCH}  --loss_type ${LOSS} \
     --dataset ${DATASET} --task ${TASK} --lr_policy poly \
-    --pseudo --pseudo_thresh ${THRESH} --freeze  --bn_freeze  \
-    --w_transfer --amp --mem_size ${MEMORY} \
+    --pseudo --pseudo_thresh ${THRESH}  --bn_freeze  --amp \
     --curr_step ${CURR} --subpath ${SUBPATH} \
     --overlap \
     | tee ${result_dir}/train-$now.log

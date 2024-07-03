@@ -59,12 +59,8 @@ def get_argparser():
     parser.add_argument("--task", type=str, default='15-1', help="cil task")
     parser.add_argument("--curr_step", type=int, default=0)
     parser.add_argument("--overlap", action='store_true', help="overlap setup (True), disjoint setup (False)")
-    parser.add_argument("--mem_size", type=int, default=0, help="size of examplar memory")
-    parser.add_argument("--freeze", action='store_true', help="enable network freezing")
     parser.add_argument("--bn_freeze", action='store_true', help="enable batchnorm freezing")
-    parser.add_argument("--w_transfer", action='store_true', help="enable weight transfer")
-    parser.add_argument("--unknown", action='store_true', help="enable unknown modeling")
 
     parser.add_argument("--initial", action='store_true', help="initial training")
-        
+
     return parser.parse_args()
