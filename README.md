@@ -167,7 +167,7 @@ train.py --data_root ${DATA_ROOT} --model ${MODEL} --crop_val --lr ${LR} \
 ### Quantitative Results
 
 The following table shows the mIoU results of different methods on the Pascal VOC 2012 and ADE20K dataset. 
-Our trained weights are available at [123Pan](https://www.123pan.com/s/VOFbVv-grcsH.html). 
+Our trained weights are available at [ModelScope](https://www.modelscope.cn/models/UltraDoughnut/BARM) and [123Pan](https://www.123pan.com/s/VOFbVv-grcsH.html)(registration required). 
 
 |  Method  | VOC 10-1 (11 tasks) | VOC 15-1 (6 tasks) | VOC 5-3 (6 tasks) | VOC 19-1 (2 tasks) |
 |:--------:|:-------------------:|:------------------:|:-----------------:|:------------------:|
