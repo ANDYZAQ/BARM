@@ -61,7 +61,7 @@ data_root/
            └── validation
 ```
 
-# Getting Started
+## Getting Started
 
 ### Class-Incremental Segmentation Segmentation on VOC 2012
 
@@ -162,9 +162,12 @@ train.py --data_root ${DATA_ROOT} --model ${MODEL} --crop_val --lr ${LR} \
 ```
 
 
-# Experiment Results
+## Experiment Results
 
+### Quantitative Results
 
+The following table shows the mIoU results of different methods on the Pascal VOC 2012 and ADE20K dataset. 
+Our trained weights are available at [123Pan](https://www.123pan.com/s/VOFbVv-grcsH.html). 
 
 |  Method  | VOC 10-1 (11 tasks) | VOC 15-1 (6 tasks) | VOC 5-3 (6 tasks) | VOC 19-1 (2 tasks) |
 |:--------:|:-------------------:|:------------------:|:-----------------:|:------------------:|
@@ -186,7 +189,7 @@ train.py --data_root ${DATA_ROOT} --model ${MODEL} --crop_val --lr ${LR} \
 <img src = "figures/barm_effect.png" width="100%" height="100%">
 <img src = "figures/qual.png" width="100%" height="100%">
 
-# Citation
+## Citation
 ```
 @inproceedings{zhang2024background,
   title={Background Adaptation with Residual Modeling for Exemplar-Free Class-Incremental Semantic Segmentation},
@@ -196,7 +199,7 @@ train.py --data_root ${DATA_ROOT} --model ${MODEL} --crop_val --lr ${LR} \
 }
 ```
 
-# Acknowledgement
+## Acknowledgement
 
 Our implementation is based on these repositories: [DeepLabV3Plus-Pytorch](https://github.com/VainF/DeepLabV3Plus-Pytorch), [SSUL](https://github.com/clovaai/SSUL).
 Thanks for their great work!
