@@ -1,15 +1,19 @@
-# BARM - Official Pytorch Implementation (ECCV 2024)
+<!-- # BARM - Official Pytorch Implementation (ECCV 2024) -->
+<div align="center">
+<h1>Official Pytorch Implementation of BARM: 
 
-**Background Adaptation with Residual Modeling for Exemplar-Free
-Class-Incremental Semantic Segmentation** <br />
-Anqi Zhang<sup>1</sup>, Guangyu Gao<sup>1</sup>
-
-<sup>1</sup> <sub>School of Computer Science and Technology, Beijing Institute of Technology, Beijing, China</sub><br />
+Background Adaptation with Residual Modeling for Exemplar-Free
+Class-Incremental Semantic Segmentation </h1>
+Anqi Zhang, Guangyu Gao <br />
+School of Computer Science and Technology, Beijing Institute of Technology, Beijing, China</sub><br />
 
 Accepted in ECCV 2024 <br />
 
-[![Paper](https://img.shields.io/badge/arXiv-2106.11562-brightgreen)](https://arxiv.org/abs/2106.11562)
+[![Paper](https://img.shields.io/badge/arxiv-2407.09838-aqua
+)](https://arxiv.org/abs/2407.09838)
+
 <img src = "figures/framework.png" width="100%" height="100%">
+</div>
 
 ## Preparation
 
@@ -181,7 +185,7 @@ Our trained weights are available at [ModelScope](https://www.modelscope.cn/mode
 |    MiB     |         26.0         |         29.2         |         32.8         |        29.3         |
 |    PLOP    |         28.8         |         31.6         |         32.9         |        30.4         |
 |    DKD     |          -           |         34.3         |         36.0         |        33.9         |
-| **SSUL-M** |       **34.1**       |       **35.2**       |       **35.7**       |      **33.7**       |
+| **BARM** |       **34.1**       |       **35.2**       |       **35.7**       |      **33.7**       |
 
 
 ### Qualitative Results
