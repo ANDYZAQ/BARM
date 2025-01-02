@@ -51,7 +51,6 @@ class VOCSegmentation(data.Dataset):
         self.root=opts.data_root        
         self.task=opts.task
         self.overlap=opts.overlap
-        self.unknown=opts.unknown
         
         self.image_set = image_set
         self.transform = transform

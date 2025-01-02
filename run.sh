@@ -1,7 +1,7 @@
 MODEL=deeplabv3bga_resnet101
-DATA_ROOT=/data/****/VOC2012
+DATA_ROOT=/data/****/VOCdevkit/VOC2012
 DATASET=voc
-TASK=15-1
+TASK=10-1
 EPOCH=20
 BATCH=8
 LOSS=bce_loss
@@ -28,7 +28,7 @@ fi
 #     --curr_step ${CURR} --subpath ${SUBPATH} \
 #     --overlap
 
-CUDA_VISIBLE_DEVICES=2,3 \
+CUDA_VISIBLE_DEVICES=8,9 \
 torchrun --nproc_per_node=2 --master_port=24129 \
 train.py --data_root ${DATA_ROOT} --model ${MODEL} --crop_val --lr ${LR} \
     --batch_size ${BATCH} --train_epoch ${EPOCH}  --loss_type ${LOSS} \

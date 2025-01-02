@@ -47,9 +47,9 @@ def get_dataset(opts):
     
     dataset_dict['test'] = dataset(opts=opts, image_set='test', transform=val_transform, cil_step=opts.curr_step)
     
-    if opts.curr_step > 0 and opts.mem_size > 0:
-        dataset_dict['memory'] = dataset(opts=opts, image_set='memory', transform=train_transform, 
-                                                 cil_step=opts.curr_step, mem_size=opts.mem_size)
+    # if opts.curr_step > 0 and opts.mem_size > 0:
+    #     dataset_dict['memory'] = dataset(opts=opts, image_set='memory', transform=train_transform, 
+    #                                              cil_step=opts.curr_step, mem_size=opts.mem_size)
 
     return dataset_dict
 
@@ -75,11 +75,11 @@ def init_dataloader(opts):
     print("Dataset: %s, Train set: %d, Val set: %d, Test set: %d" %
         (opts.dataset, len(dataset_dict['train']), len(dataset_dict['val']), len(dataset_dict['test'])))
     
-    if opts.curr_step > 0 and opts.mem_size > 0:
-        memory_sampler = DistributedSampler(dataset_dict['memory'])
-        memory_loader = data.DataLoader(
-            memory_sampler, batch_size=opts.batch_size, shuffle=False, num_workers=4, pin_memory=True, drop_last=True)
-    else:
-        memory_loader = None
+    # if opts.curr_step > 0 and opts.mem_size > 0:
+    #     memory_sampler = DistributedSampler(dataset_dict['memory'])
+    #     memory_loader = data.DataLoader(
+    #         memory_sampler, batch_size=opts.batch_size, shuffle=False, num_workers=4, pin_memory=True, drop_last=True)
+    # else:
+    memory_loader = None
     
     return train_loader, val_loader, test_loader, memory_loader
